@@ -53,4 +53,10 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  resources :students, only: [:index, :new, :create, :show, :edit]
+  patch '/students/:id', to: "students#update"
+
+  resources :school_classes, only: [:index, :new, :create, :show, :edit]
+  patch '/school_classes/:id', to: "school_classes#update"
 end
